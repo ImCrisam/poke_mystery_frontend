@@ -1,0 +1,79 @@
+{
+    "name": "poke_mystery_frontend",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "node_angular",
+    "workspaceFolder": "/workspace",
+    "postCreateCommand": "",
+    "postStartCommand": "",
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:2": {},
+        "ghcr.io/devcontainers/features/git:1": {},
+        "ghcr.io/devcontainers/features/github-cli:1": {},
+        "ghcr.io/devcontainers-extra/features/angular-cli:2": {},
+    },
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "workbench.colorTheme": "Visual Studio Dark",
+                "terminal.integrated.defaultProfile.linux": "zsh",
+                "terminal.integrated.profiles.linux": {
+                    "zsh": {
+                        "path": "/bin/zsh"
+                    }
+                }
+            },
+            "extensions": [
+                //Framework
+                "Angular.ng-template",
+                "Mikael.Angular-BeastCode",
+                "cyrilletuzi.angular-schematics",
+                "natewallace.angular2-inline",
+
+                // TS languages
+                "pmneo.tsimporter",
+                "YoavBls.pretty-ts-errors",
+                "wix.vscode-import-cost",
+                "mikestead.dotenv",
+                "steoates.autoimport",
+                "DarkPhoenix.split-mui-imports",
+                "ms-vscode.vscode-typescript-next",
+                // utilities general web
+                "streetsidesoftware.code-spell-checker",
+                "eamodio.gitlens",
+                "mhutchie.git-graph",
+                "naumovs.color-highlight",
+                "shardulm94.trailing-spaces",
+                "humao.rest-client",
+                "mechatroner.rainbow-csv",
+                "christian-kohler.path-intellisense",
+                "MariusAlchimavicius.json-to-ts",
+                "kisstkondoros.vscode-gutter-preview",
+                "ecmel.vscode-html-css",
+                "vincaslt.highlight-matching-tag",
+                "formulahendry.auto-close-tag",
+                "formulahendry.auto-rename-tag",
+                "quicktype.quicktype",
+                //Formatting and linting
+                "usernamehw.errorlens",
+                "esbenp.prettier-vscode",
+                "dbaeumer.vscode-eslint",
+                "firsttris.vscode-jest-runner",
+                "shd101wyy.markdown-preview-enhanced",
+                "christian-kohler.npm-intellisense",
+                "ms-azuretools.vscode-containers",
+                // IA
+                "google.geminicodeassistant",
+                "GitHub.copilot-chat",
+                "GitHub.copilot"
+            ]
+        },
+        "settings": {
+            "workbench.colorTheme": "Default Dark Modern",
+            "editor.defaultFormatter": "esbenp.prettier-vscode",
+            "material-icon-theme.enableLogging": true
+        }
+    },
+    "forwardPorts": [
+        3000
+    ]
+}
