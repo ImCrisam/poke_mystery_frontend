@@ -7,6 +7,7 @@ services:
       - ..:/workspace:cached
 
     command: sleep infinity
+    network_mode: service:ia
   ia:
     build:
       context: .
@@ -19,7 +20,7 @@ services:
               count: all
               capabilities: [gpu]
     ports:
-      - "8000:8000"
+      - '8000:8000'
     environment:
       - NVIDIA_VISIBLE_DEVICES=all
 
