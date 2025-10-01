@@ -1,18 +1,9 @@
 
 FROM ghcr.io/ggml-org/llama.cpp:server-cuda
-# Descargar modelo GGUF (Q3_K_M)
-RUN mkdir -p /models \
-    && curl -L -o /models/qwen3-30b-q3_k_m.gguf \
-       https://huggingface.co/unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF/resolve/main/Qwen3-Coder-30B-A3B-Instruct-Q3_K_M.gguf
 
-# Exponer puerto para modo servidor
 EXPOSE 8000
 
-CMD ["--model", "/models/qwen3-30b-q3_k_m.gguf", \
-     "--ctx-size", "32768", \
-    #  "--n-gpu-layers", "32",\
-     "--jinja", \
-     "-ub", "2048", \
-     "-b", "2048",\
-    "--port", "8000",\
-    "--host", "0.0.0.0"]
+COPY docker-ia-entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/docker-ia-entrypoint.sh
+
+ENTRYPOINT ["/usr/local/bin/docker-ia-entrypoint.sh"]

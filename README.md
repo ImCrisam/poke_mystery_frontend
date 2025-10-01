@@ -1,4 +1,5 @@
 # PokeMysteryFrontend
+docker volume create models_data -> se debe crear para guardar y reutilisar modelos
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.3.
 

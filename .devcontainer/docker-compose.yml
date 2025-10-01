@@ -7,7 +7,7 @@ services:
       - ..:/workspace:cached
 
     command: sleep infinity
-    network_mode: service:ia
+    # network_mode: service:ia
   ia:
     build:
       context: .
@@ -23,4 +23,9 @@ services:
       - '8000:8000'
     environment:
       - NVIDIA_VISIBLE_DEVICES=all
+    volumes:
+      - models_data:/models
 
+volumes:
+  models_data:
+    external: true
